@@ -1,0 +1,33 @@
+.img-beer{
+    width: 150px;
+    
+}
+
+
+.beer-list{
+    list-style: none;
+    
+    font-style: oblique;
+    font-weight: bold;
+    
+  }
+
+li{
+    padding: 5px;
+}
+
+.btn-addToCart{
+    width: 150px;
+    height: 30px;   
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btn-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

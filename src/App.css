@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+ align-content: center;
+  flex-direction: column;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: -webkit-linear-gradient(
+    -45deg,
+    #3f4c6b 6%,
+    #3f4c6b 48%,
+    #3f4c6b 100%
+  );
+  color: whitesmoke;
+  width: 100%;
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.links {
+  padding: 10px;
+}
