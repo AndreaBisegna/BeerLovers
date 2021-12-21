@@ -26,7 +26,7 @@ const ProductsList = () => {
         axios.get(url)
             .then((res) => {
                 setIsLoading(false);
-                
+
                 setItem(res.data)
             })
             .catch((err) => {
