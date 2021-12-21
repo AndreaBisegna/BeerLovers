@@ -7,13 +7,13 @@ import axios from 'axios';
 import Beer from './Beer';
 import store from './Store';
 import { add } from './Actions';
-import Available from './Available';
 
 
 
 
 
-const url = "https://run.mocky.io/v3/b7b21e19-68be-432e-8927-579161545b40";
+
+const url = "https://run.mocky.io/v3/a81dfe45-90ab-4cc1-bb4a-d67a8e3b6ecf";
 
 const ProductsList = () => {
     const [item, setItem] = useState([]);
@@ -37,45 +37,47 @@ const ProductsList = () => {
 
     useEffect(() => {
         getData();
-    },[]);
-    if (isLoading){
-       return <Loading/>
+        document.title = `Beer Listed ${item.length}`;
+    }, []);
+    if (isLoading) {
+        return <Loading />
     }
-    if(isError){
-        return <Error/>
+    if (isError) {
+        return <Error />
     }
 
-   
+
+
 
     const addToCart = (e) => {
         console.log(e);
-        
-      store.dispatch(add(e))
+
+        store.dispatch(add(e))
     }
-    
-    
+
+
 
     const saveNewItem = (e) => {
-      
-      setItem([...item, e]);
-      
-      
+
+        setItem([...item, e]);
+
+
     }
-    
+
     return (
         <div>
-        <FormInput saveNewItem={saveNewItem}/>
-        <div className="production-list">
-            {
-                item.map((el)=>(
+            <FormInput saveNewItem={saveNewItem} />
+            <div className="production-list">
+                {
+                    item.map((el) => (
 
-               <Beer key={el.id} {...el} addToCart={addToCart}
-                   
-               
-               />
-               
-                ))
-            }
+                        <Beer key={el.id} {...el} addToCart={addToCart}
+
+
+                        />
+
+                    ))
+                }
             </div>
         </div>
     );

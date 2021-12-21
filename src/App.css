@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+/* NavBar*/
+
 .main-container {
   display: flex;
   align-items: center;
@@ -32,4 +34,29 @@ nav {
 
 .links {
   padding: 10px;
+}
+
+
+/* Cards di Benvenuto nella HomePage */
+.card-beers{
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #1e1e1e;
+  margin: 10px;
+}
+
+.main-beersCard{
+  display: flex;
+  flex-wrap: wrap
+  
+}
+
+.img-card{
+  margin: 10px;
+}
+
+.beer-cards_title{
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: larger;
 }

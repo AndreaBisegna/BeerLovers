@@ -13,9 +13,11 @@ const Nav = () => {
   return (
     <nav>
     <div>
+    <Link style={navStyle} to="/">
       <h3>
           <em>L</em>o<em>G</em>o
       </h3>
+      </Link>
       </div>
       <div>
       <ul className="nav-links">

@@ -1,4 +1,5 @@
 import React from 'react';
+import "./available.css"
 
 const Available = () => {
   return (

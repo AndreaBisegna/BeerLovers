@@ -24,6 +24,7 @@ li{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background: -webkit-linear-gradient(-45deg, #fefcea 0%,#f1da36 100%); 
 }
 
 .btn-cont{
