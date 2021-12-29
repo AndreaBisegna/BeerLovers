@@ -39,9 +39,9 @@ const SearchField = () => {
 
   const getBeers = async () => {
     try {
+      setIsLoading(true)
       const res = await axios.get(homeUrl);
       setBeerCard(res.data);
-      setIsLoading(false)
 
     } catch (error) {
       console.log(error);
