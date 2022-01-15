@@ -1,13 +1,14 @@
 import React from 'react';
 
+
 const CartItem = ({data}) => {
 
-  const addItem = (item) => {
-    return item + 1;
+  const addItem = (id) => {
+    
   }
 
   const lessItem = (item) =>{
-       return item - 1;
+      
   }
   
 

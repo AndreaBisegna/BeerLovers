@@ -6,12 +6,23 @@ switch (data.type) {
     case actions.ADDBEER:
         console.log(data);
     
-        return {items: [...state.items, {  nome: data.x.nome, prezzo: data.x.prezzo, disponibilità: data.x.disponibilità, img: data.x.img}]};
+        return {items: [...state.items, data.x]};
         break;
         
+
+        
+        case actions.ADDONE:
+            let findIndex = state.items.findIndex(x=> x.id === data.x.id);
+             items[findIndex].quantity + 1
+            return findIndex;
         default:
             break;
     }
 }
 
 export default reducerData;
+
+
+
+
+

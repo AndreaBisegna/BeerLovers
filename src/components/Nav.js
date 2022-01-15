@@ -5,6 +5,7 @@ const Nav = () => {
   
     const navStyle = {
         color: 'whitesmoke',
+        textDecoration: 'none'
     
         
     }
@@ -26,6 +27,9 @@ const Nav = () => {
           </Link>
           <Link style={navStyle} to="./components/MyCart">
           <li className="links">MyCart</li>
+          </Link>
+          <Link style={navStyle} to="./components/Blog">
+          <li className="links">Blog</li>
           </Link>
       </ul>
       </div>

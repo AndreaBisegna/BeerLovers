@@ -9,6 +9,7 @@ import axios from 'axios';
 import BeersHome from './BeersHome.js';
 import Loading from './components/Loading.js';
 import Error from './components/Error.js';
+import Blog from './components/Blog.js';
 
 function App() {
 
@@ -22,6 +23,7 @@ return (
             <Route path="/" exact element={<SearchField />} />
             <Route path="/components/ProductsList" element={<ProductsList />} />
             <Route path="/components/MyCart" element={<MyCart />} />
+            <Route path="/components/Blog" element={<Blog />} />
           </Routes>
         </div>
       </div>

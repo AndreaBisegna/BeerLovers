@@ -1,12 +1,12 @@
 import React from 'react';
 import Available from './Available';
 import store from './Store';
-import { add } from './Actions';
+import { add, addOne, removeOne } from './Actions';
 import {HiShoppingCart} from 'react-icons/hi';
 import './beer.css';
 
 
-const Beer = ({ nome, prezzo, disponibilità, img, addToCart}) => {
+const Beer = ({ beerItem}) => {
      
     const beerBoxStyle = {
             borderRadius: '20px',
@@ -21,9 +21,23 @@ const Beer = ({ nome, prezzo, disponibilità, img, addToCart}) => {
 
     
    const createObj = () => {
-       let obj = {nome: nome, prezzo: prezzo, disponibilità: disponibilità, img: img}
+       //let obj = {nome: beerItem.nome, prezzo: prezzo, disponibilità: disponibilità, img: img}
       
-     store.dispatch(add(obj));
+     //store.dispatch(add(obj));
+
+     
+
+     if(store.getState()){
+         let find = store.getState().items.find(x=> x.id === beerItem.id);
+         console.log(find);
+         if(find !== undefined){
+             store.dispatch(addOne(beerItem.id, 1 ))
+         }
+        }
+        else{
+            store.dispatch(add(beerItem));
+        }
+
    }
 
    const iconStyle = {fontSize: '20px'}
@@ -35,10 +49,10 @@ const Beer = ({ nome, prezzo, disponibilità, img, addToCart}) => {
     return (
         <div style={beerBoxStyle}>
             <ul className="beer-list">
-                <li> nome: {nome}</li>
-                <li> prezzo: {prezzo}</li>
-                <li> disponibilità: {disponibilità ? <span>OK</span> :  <Available/>}</li>
-                <img className="img-beer" alt="" src={img} />
+                <li> nome: {beerItem.nome}</li>
+                <li> prezzo: {beerItem.prezzo}</li>
+                <li> disponibilità: {beerItem.disponibilità ? <span>OK</span> :  <Available/>}</li>
+                <img className="img-beer" alt="" src={beerItem.img} />
                 <div className="btn-cont">
                 <button className="btn-addToCart" onClick={createObj}> Add to Cart
                 <HiShoppingCart style={iconStyle}/>

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react'
-import FormInput from './FormInput';
+
 import Loading from './Loading';
 import Error from './Error';
 import axios from 'axios';
@@ -37,7 +37,6 @@ const ProductsList = () => {
 
     useEffect(() => {
         getData();
-        document.title = `Beer Listed ${item.length}`;
     }, []);
     if (isLoading) {
         return <Loading />
@@ -53,9 +52,8 @@ const ProductsList = () => {
         console.log(e);
 
         store.dispatch(add(e))
+        
     }
-
-
 
     const saveNewItem = (e) => {
 
@@ -64,14 +62,16 @@ const ProductsList = () => {
 
     }
 
+  
+
     return (
         <div>
-            <FormInput saveNewItem={saveNewItem} />
+            
             <div className="production-list">
                 {
                     item.map((el) => (
 
-                        <Beer key={el.id} {...el} addToCart={addToCart}
+                        <Beer key={el.id} beerItem={el} addToCart={addToCart}
 
 
                         />
